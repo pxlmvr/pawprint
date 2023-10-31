@@ -55,3 +55,7 @@ h5 {
 small {
   font-size: 0.8rem;
 }
+
+main {
+  margin: 0 auto;
+}
