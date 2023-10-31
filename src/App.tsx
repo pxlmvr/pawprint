@@ -2,10 +2,9 @@ import { Form } from '@containers/Form'
 
 function App() {
   return (
-    <>
-      Hello world
+    <main>
       <Form />
-    </>
+    </main>
   )
 }
 
