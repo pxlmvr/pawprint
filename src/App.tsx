@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { fetchBreedList, fetchList, fetchRandom } from './clients/dogceo'
-import { ErrorMessage } from './components/ErrorMessage'
-import { Results } from './containers/Results'
-import { Container } from './components/Container'
-import { Select } from './components/Select'
-import { mapToLabelValue } from './utils/mapToLabelValue'
-import { Button } from './components/Button'
+import { ErrorMessage } from '@components/ErrorMessage'
+import { Results } from '@containers/Results'
+import { Container } from '@components/Container'
+import { Select } from '@components/Select'
+import { mapToLabelValue } from '@utils/mapToLabelValue'
+import { Button } from '@components/Button'
 
 export type BreedData = Record<string, string[]>
 
