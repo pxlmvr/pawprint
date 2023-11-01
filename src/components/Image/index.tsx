@@ -7,7 +7,7 @@ type Props = {
 export const Image: React.FC<Props> = ({ url }) => {
   return (
     <figure>
-      <img className={classes.image} src={url}></img>
+      <img loading="lazy" className={classes.image} src={url}></img>
     </figure>
   )
 }

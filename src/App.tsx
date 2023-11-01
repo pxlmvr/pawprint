@@ -3,14 +3,19 @@ import { fetchBreedList, fetchList, fetchRandom } from './clients/dogceo'
 import { ErrorMessage } from '@components/ErrorMessage'
 import { Results } from '@containers/Results'
 import { Container } from '@components/Container'
-import { Select } from '@components/Select'
+import { Select, SelectOption } from '@components/Select'
 import { mapToLabelValue } from '@utils/mapToLabelValue'
 import { Button } from '@components/Button'
+import { BackToTop } from './components/BackToTop'
 
 export type BreedData = Record<string, string[]>
 
+const anyOption: SelectOption = { label: 'Any', value: '' }
+const scrollTreshold = 300
+
 function App() {
   const [breeds, setBreeds] = useState<BreedData>({})
+  const [showBttButton, setShowBttButton] = useState<boolean>(false)
 
   const [loading, setLoading] = useState<boolean>(false)
   const [results, setResults] = useState<string[]>([])
@@ -60,6 +65,18 @@ function App() {
     fetchBreeds()
   }, [error])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition: number = window.scrollY
+
+      setShowBttButton(scrollPosition > scrollTreshold)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <main>
       <header>
@@ -80,7 +97,10 @@ function App() {
                 label="Sub breed"
                 name="subBreed"
                 placeholder="Select a sub breed"
-                options={subBreedList.map((sb) => mapToLabelValue(sb))}
+                options={[
+                  anyOption,
+                  ...subBreedList.map((sb) => mapToLabelValue(sb)),
+                ]}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setSelectedSubBreed(e.target.value)
                 }
@@ -106,6 +126,7 @@ function App() {
       </header>
       {error && <ErrorMessage />}
       <Results loading={loading} images={results} />
+      {showBttButton && <BackToTop />}
     </main>
   )
 }

@@ -6,5 +6,5 @@
   padding: 0 1rem;
   -webkit-appearance: none;
   background: #fff url('src/assets/chevron.svg') no-repeat;
-  background-position: 95%;
+  background-position: calc(100% - 20px);
 }

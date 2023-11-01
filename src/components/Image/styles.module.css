@@ -10,4 +10,6 @@
   object-fit: cover;
   border-radius: 2rem;
   border: 1px solid var(--dawn);
+  min-height: 300px;
+  background-color: var(--dawn);
 }
