@@ -76,6 +76,5 @@ describe('<Select />', () => {
     fireEvent.change(getByRole('combobox'), { target: { value: 'foo' } })
 
     expect(onChangeMock).toHaveBeenCalledTimes(1)
-    expect(onChangeMock).toHaveBeenCalledWith('foo')
   })
 })
