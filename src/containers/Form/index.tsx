@@ -33,15 +33,19 @@ export const Form: React.FC<Props> = ({
           options={breedOpts}
           label="Breed"
           name="breed"
+          placeholder="Select a breed"
           onChange={(b: string) => onBreedChange(b)}
         />
-        <Select
-          className="mt-s"
-          label="Sub breed"
-          name="subBreed"
-          options={subBreedOpts}
-          onChange={(sb: string) => onSubBreedChange(sb)}
-        />
+        {subBreedOpts.length > 0 && (
+          <Select
+            className="mt-s"
+            label="Sub breed"
+            name="subBreed"
+            placeholder="Select a sub breed"
+            options={subBreedOpts}
+            onChange={(sb: string) => onSubBreedChange(sb)}
+          />
+        )}
 
         <Button className="mt-l" onClick={() => {}}>
           Random
