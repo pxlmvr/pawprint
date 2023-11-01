@@ -29,7 +29,7 @@ describe('<Select />', () => {
     expect(queryAllByRole('option')).not.toBeNull()
   })
   test('option has correct label and value', () => {
-    const { queryByRole, queryByText } = render(
+    const { queryAllByRole, queryByText } = render(
       <Select
         name="aselect"
         label="A label"
@@ -38,8 +38,26 @@ describe('<Select />', () => {
       />
     )
 
-    expect(queryByRole('option')).toHaveProperty('value', 'foo')
+    const options = queryAllByRole('option')
+
+    expect(options[1]).toHaveProperty('value', 'foo')
     expect(queryByText('Foo')).not.toBeNull()
+  })
+  test('it uses placeholder prop as default disabled value', () => {
+    const { queryAllByRole, queryByText } = render(
+      <Select
+        name="aselect"
+        label="A label"
+        options={[{ label: 'Foo', value: 'foo' }]}
+        onChange={() => {}}
+        placeholder="Select me"
+      />
+    )
+
+    const options = queryAllByRole('option')
+
+    expect(options[1]).toHaveProperty('disabled')
+    expect(queryByText('Select me')).not.toBeNull()
   })
   test('calls onChange handler upon change', () => {
     const onChangeMock = jest.fn()

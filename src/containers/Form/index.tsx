@@ -8,11 +8,21 @@ export const Form: React.FC = () => {
   return (
     <section className={classes.form}>
       <Container>
-        <Select />
-        <Select />
+        <Select label="Breed" name="breed" options={[]} onChange={() => {}} />
+        <Select
+          className="mt-s"
+          label="Sub breed"
+          name="subBreed"
+          options={[]}
+          onChange={() => {}}
+        />
 
-        <Button onClick={() => {}}>Random</Button>
-        <Button onClick={() => {}}>List</Button>
+        <Button className="mt-l" onClick={() => {}}>
+          Random
+        </Button>
+        <Button className="mt-s" onClick={() => {}}>
+          List
+        </Button>
       </Container>
     </section>
   )

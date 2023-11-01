@@ -8,8 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --orange: #ff852a;
-  --peach: #ffeee1;
+  --orange: #ef4b3c;
+  --chardonnay: #fbc58a;
+  --peach: #fdeedd;
   --dawn: #f2ebe6;
   --metal: #1d1d1b;
 }
@@ -58,4 +59,23 @@ small {
 
 main {
   margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.mt-s {
+  margin-top: 0.6rem;
+}
+
+.mt-l {
+  margin-top: 2rem;
 }

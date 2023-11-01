@@ -2,6 +2,9 @@
   width: 100%;
   height: 48px;
   border-radius: 2rem;
-  border: 1px solid var(--dawn);
+  border: 1px solid var(--chardonnay);
   padding: 0 1rem;
+  -webkit-appearance: none;
+  background: #fff url('src/assets/chevron.svg') no-repeat;
+  background-position: 95%;
 }

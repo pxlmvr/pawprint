@@ -17,6 +17,16 @@ describe('<Button />', () => {
     expect(getByText('Click me')).not.toBeNull()
   })
 
+  test('accepts disabled prop', () => {
+    const { queryByRole } = render(
+      <Button disabled onClick={() => {}}>
+        Click me
+      </Button>
+    )
+
+    expect(queryByRole('button')).toHaveProperty('disabled')
+  })
+
   test('calls handler on click', () => {
     const onClickMock = jest.fn()
 

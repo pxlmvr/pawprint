@@ -8,18 +8,25 @@
   font-weight: 600;
   height: 54px;
   padding: 0.8rem 1rem;
-  width: 100%;
-  transition-property: color, background-color, border-color;
   transition-duration: 0.4s;
+  transition-property: color, background-color, border-color;
   transition-timing-function: ease;
+  width: 100%;
 }
 
 .button:hover {
-  background: var(--metal);
-  border-color: var(--metal);
+  background: var(--chardonnay);
+  border-color: var(--chardonnay);
   color: #fff;
 }
 
 .button:focus {
   border: 2px solid var(--metal);
+}
+
+.button:disabled,
+.button:disabled:hover {
+  background-color: var(--peach);
+  border-color: var(--chardonnay);
+  color: var(--chardonnay);
 }
