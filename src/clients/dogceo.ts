@@ -5,7 +5,7 @@ export type FetchBreedListResponse = {
 
 const baseUrl = 'https://dog.ceo/api'
 
-export const fetchBreedList = async (): Promise<fetchBreedListResponse> => {
+export const fetchBreedList = async (): Promise<FetchBreedListResponse> => {
   try {
     const response = await fetch(`${baseUrl}/breeds/list/all`)
 
@@ -21,34 +21,20 @@ export const fetchBreedList = async (): Promise<fetchBreedListResponse> => {
   }
 }
 
-export const fetchRandomByBreed = async (breed: string) => {
-  const response = await fetch(`${baseUrl}/breed/${breed}/images/random`)
-  if (!response.ok) {
-    throw new Error('Network response was not ok')
-  }
+export const fetchRandom = async (breed: string, subBreed?: string) => {
+  const path = subBreed ? `${breed}/${subBreed}/` : `${breed}/`
+
+  const response = await fetch(`${baseUrl}/breed/${path}images/random`)
+
   const data = await response.json()
   return data
 }
 
-export const fetchListByBreed = async (breed: string) => {
-  const response = await fetch(`${baseUrl}/breed/${breed}/images`)
-  return response
-}
+export const fetchList = async (breed: string, subBreed?: string) => {
+  const path = subBreed ? `${breed}/${subBreed}/` : `${breed}/`
 
-export const fetchRandomByBreedAndSubBreed = async (
-  breed: string,
-  subBreed: string
-) => {
-  const response = await fetch(
-    `${baseUrl}/breed/${breed}/${subBreed}/images/random`
-  )
-  return response
-}
+  const response = await fetch(`${baseUrl}/breed/${path}images`)
 
-export const fetchListByBreedAndSubBreed = async (
-  breed: string,
-  subBreed: string
-) => {
-  const response = await fetch(`${baseUrl}/breed/${breed}/${subBreed}/images`)
-  return response
+  const data = await response.json()
+  return data
 }

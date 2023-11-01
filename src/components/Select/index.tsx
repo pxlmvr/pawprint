@@ -7,7 +7,7 @@ type Props = {
   label: string
   name: string
   options: SelectOption[]
-  onChange: (v: string) => void
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
   placeholder?: string
   className?: string
 }
@@ -28,7 +28,7 @@ export const Select: React.FC<Props> = ({
         {label}
       </label>
       <select
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
         id={id}
         name={name}
         className={classes.select}
