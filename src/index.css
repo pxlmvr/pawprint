@@ -13,6 +13,8 @@
   --peach: #fdeedd;
   --dawn: #f2ebe6;
   --metal: #1d1d1b;
+  --error-light: #fdeeee;
+  --error: #f39a9a;
 }
 
 body {
@@ -59,6 +61,9 @@ small {
 
 main {
   margin: 0 auto;
+  background-color: var(--peach);
+  border-radius: 0 0 2rem 2rem;
+  padding: 1.5rem 1rem;
 }
 
 .sr-only {

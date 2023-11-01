@@ -1,0 +1,14 @@
+.wrapper {
+  bottom: 1rem;
+  position: fixed;
+  width: 100%;
+}
+
+.errorMessage {
+  background-color: var(--error-light);
+  border-radius: 1rem;
+  border: 1px solid var(--error);
+  margin: 0 auto;
+  max-width: 340px;
+  padding: 1rem;
+}
