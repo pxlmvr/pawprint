@@ -1,12 +1,12 @@
 import React from 'react'
 import classes from './styles.module.css'
 
-type Option = { value: string; label: string }
+export type SelectOption = { value: string; label: string }
 
 type Props = {
   label: string
   name: string
-  options: Option[]
+  options: SelectOption[]
   onChange: (v: string) => void
   placeholder?: string
   className?: string
@@ -35,7 +35,7 @@ export const Select: React.FC<Props> = ({
         defaultValue={placeholder}
       >
         <option disabled>{placeholder}</option>
-        {options.map((option: Option) => {
+        {options.map((option: SelectOption) => {
           return (
             <option key={option.value} value={option.value}>
               {option.label}
