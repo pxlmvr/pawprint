@@ -5,9 +5,9 @@
 }
 
 .errorMessage {
-  background-color: var(--error-light);
+  background-color: var(--pink);
   border-radius: 1rem;
-  border: 1px solid var(--error);
+  border: 1px solid var(--red);
   margin: 0 auto;
   max-width: 340px;
   padding: 1rem;

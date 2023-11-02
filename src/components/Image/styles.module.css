@@ -9,7 +9,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
-  border: 1px solid var(--dawn);
+  border: 1px solid var(--nickel);
   min-height: 300px;
-  background-color: var(--dawn);
+  background-color: var(--nickel);
 }

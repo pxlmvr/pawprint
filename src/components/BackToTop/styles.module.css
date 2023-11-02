@@ -1,8 +1,8 @@
 .btt {
   align-items: center;
-  background-color: var(--orange);
+  background-color: var(--red);
   border-radius: 50%;
-  border: 1px solid var(--orange);
+  border: 1px solid var(--red);
   bottom: 2rem;
   display: flex;
   height: 3rem;
@@ -16,6 +16,6 @@
 }
 
 .btt:hover {
-  background: var(--chardonnay);
-  border-color: var(--chardonnay);
+  background: var(--monza);
+  border-color: var(--monza);
 }

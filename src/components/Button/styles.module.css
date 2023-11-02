@@ -1,10 +1,10 @@
 .button {
-  background-color: var(--orange);
+  background-color: var(--red);
   border-radius: 1rem;
-  border: 2px solid var(--orange);
+  border: 2px solid var(--red);
   color: #fff;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   height: 54px;
   padding: 0.8rem 1rem;
@@ -15,18 +15,28 @@
 }
 
 .button:hover {
-  background: var(--chardonnay);
-  border-color: var(--chardonnay);
+  background: var(--monza);
+  border-color: var(--monza);
   color: #fff;
 }
 
 .button:focus {
-  border: 2px solid var(--metal);
+  border: 2px solid var(--monza);
 }
 
 .button:disabled,
 .button:disabled:hover {
-  background-color: var(--peach);
-  border-color: var(--chardonnay);
-  color: var(--chardonnay);
+  background-color: var(--palesky);
+  border-color: var(--palesky);
+  cursor: not-allowed;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content > svg {
+  margin-right: 6px;
 }

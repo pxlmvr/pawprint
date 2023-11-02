@@ -8,13 +8,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --orange: #ef4b3c;
-  --chardonnay: #fbc58a;
-  --peach: #fdeedd;
-  --dawn: #f2ebe6;
+  --pink: #fec7cf;
+  --red: #e60023;
+  --monza: #c60623;
+  --palesky: #6b7280;
+  --nickel: #c8c8c4;
   --metal: #1d1d1b;
-  --error-light: #fdeeee;
-  --error: #f39a9a;
 }
 
 body {
@@ -63,8 +62,8 @@ main {
   margin: 0 auto;
 }
 
-header {
-  background-color: var(--peach);
+#controls {
+  background-color: var(--metal);
   border-radius: 0 0 2rem 2rem;
   padding: 1.5rem 1rem;
 }
@@ -86,4 +85,17 @@ header {
 
 .mt-l {
   margin-top: 2rem;
+}
+
+@container (min-width: 480px) {
+  #submit-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1rem;
+  }
+
+  #submit-buttons > button {
+    margin: 0;
+  }
 }

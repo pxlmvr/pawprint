@@ -20,7 +20,7 @@ export const Button: React.FC<Props> = ({
       onClick={onClick}
       className={`${className} ${classes.button}`}
     >
-      {children}
+      <div className={classes.content}>{children}</div>
     </button>
   )
 }

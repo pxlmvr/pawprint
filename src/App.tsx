@@ -7,6 +7,8 @@ import { Select, SelectOption } from '@components/Select'
 import { mapToLabelValue } from '@utils/mapToLabelValue'
 import { Button } from '@components/Button'
 import { BackToTop } from './components/BackToTop'
+import { Shuffle } from './icons/Shuffle'
+import { List } from './icons/List'
 
 export type BreedData = Record<string, string[]>
 
@@ -98,7 +100,7 @@ function App() {
 
   return (
     <main>
-      <header>
+      <section id="controls">
         <Container>
           <form>
             <Select
@@ -125,24 +127,27 @@ function App() {
                 }
               />
             )}
-
-            <Button
-              disabled={!selectedBreed}
-              className="mt-l"
-              onClick={getRandom}
-            >
-              Random
-            </Button>
-            <Button
-              disabled={!selectedBreed}
-              className="mt-s"
-              onClick={getList}
-            >
-              List
-            </Button>
+            <div id="submit-buttons">
+              <Button
+                disabled={!selectedBreed}
+                className="mt-l"
+                onClick={getRandom}
+              >
+                <Shuffle />
+                Fetch random image
+              </Button>
+              <Button
+                disabled={!selectedBreed}
+                className="mt-s"
+                onClick={getList}
+              >
+                <List />
+                Get all images!
+              </Button>
+            </div>
           </form>
         </Container>
-      </header>
+      </section>
       {error && <ErrorMessage message={error} />}
       <Results loading={loading} images={results} />
       {showBttButton && <BackToTop />}
