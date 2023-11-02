@@ -139,6 +139,7 @@ function App() {
                 disabled={!selectedBreed}
                 className="mt-l"
                 onClick={getRandom}
+                testId='fetch-random-button'
               >
                 <Shuffle />
                 Fetch random image
@@ -147,6 +148,7 @@ function App() {
                 disabled={!selectedBreed}
                 className="mt-s"
                 onClick={getList}
+                testId='fetch-list-button'
               >
                 <List />
                 Get all images!

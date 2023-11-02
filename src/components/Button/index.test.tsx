@@ -40,4 +40,14 @@ describe('<Button />', () => {
 
     expect(onClickMock).toHaveBeenCalledTimes(1)
   })
+
+  test('accepts testId prop and renders it', () => {
+    const { queryByTestId } = render(
+      <Button testId="abc" onClick={() => {}}>
+        Click me
+      </Button>
+    )
+
+    expect(queryByTestId('abc')).not.toBeNull()
+  })
 })

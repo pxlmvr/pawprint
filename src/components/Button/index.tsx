@@ -5,6 +5,7 @@ type Props = {
   className?: string
   disabled?: boolean
   onClick: VoidFunction
+  testId?: string
 }
 
 export const Button: React.FC<Props> = ({
@@ -12,6 +13,7 @@ export const Button: React.FC<Props> = ({
   className,
   disabled,
   onClick,
+  testId
 }) => {
   return (
     <button
@@ -19,6 +21,7 @@ export const Button: React.FC<Props> = ({
       disabled={disabled}
       onClick={onClick}
       className={`${className} ${classes.button}`}
+      data-testid={testId}
     >
       <div className={classes.content}>{children}</div>
     </button>
