@@ -72,15 +72,22 @@ function App() {
     const fetchBreeds = async () => {
       try {
         const { message } = await fetchBreedList()
+
+        localStorage.setItem('dogBreeds', JSON.stringify(message))
         setBreeds(message)
-      } catch (_e) {
-        console.error(error)
+      } catch (e) {
+        console.error(e)
         setError('Could not fetch breed list at the moment.')
       }
     }
 
-    fetchBreeds()
-  }, [error])
+    const localBreedList: string | null = localStorage.getItem('dogBreeds')
+    if (localBreedList) {
+      setBreeds(JSON.parse(localBreedList))
+    } else {
+      fetchBreeds()
+    }
+  }, [])
 
   useEffect(() => {
     setSelectedSubBreed('')
