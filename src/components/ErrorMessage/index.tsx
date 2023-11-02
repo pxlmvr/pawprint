@@ -1,7 +1,11 @@
 import classes from './styles.module.css'
 
-export const ErrorMessage: React.FC = () => (
+type Props = {
+  message: string
+}
+
+export const ErrorMessage: React.FC<Props> = ({ message }) => (
   <div className={classes.wrapper}>
-    <p className={classes.errorMessage}>Something went wrong</p>
+    <p className={classes.errorMessage}>{message}</p>
   </div>
 )

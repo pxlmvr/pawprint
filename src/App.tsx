@@ -19,7 +19,7 @@ function App() {
 
   const [loading, setLoading] = useState<boolean>(false)
   const [results, setResults] = useState<string[]>([])
-  const [error, setError] = useState<boolean>(false)
+  const [error, setError] = useState<string>('')
 
   const [selectedBreed, setSelectedBreed] = useState<string>('')
   const [selectedSubBreed, setSelectedSubBreed] = useState<string>('')
@@ -30,11 +30,18 @@ function App() {
   const getRandom = async () => {
     setLoading(true)
     try {
-      const { message } = await fetchRandom(selectedBreed, selectedSubBreed)
-      setResults([message])
+      const { message, status } = await fetchRandom(
+        selectedBreed,
+        selectedSubBreed
+      )
+      if (status === 'success') {
+        setResults([message])
+      } else {
+        setError(message)
+      }
     } catch (error) {
       console.error(error)
-      setError(true)
+      setError('Somwthing went wrong. Please try again')
     }
     setLoading(false)
   }
@@ -42,11 +49,19 @@ function App() {
   const getList = async () => {
     setLoading(true)
     try {
-      const { message } = await fetchList(selectedBreed, selectedSubBreed)
-      setResults(message)
+      const { message, status } = await fetchList(
+        selectedBreed,
+        selectedSubBreed
+      )
+
+      if (status === 'success') {
+        setResults(message as string[])
+      } else {
+        setError(message as string)
+      }
     } catch (error) {
       console.error(error)
-      setError(true)
+      setError('Somwthing went wrong. Please try again')
     }
     setLoading(false)
   }
@@ -58,7 +73,7 @@ function App() {
         setBreeds(message)
       } catch (_e) {
         console.error(error)
-        setError(true)
+        setError('Could not fetch breed list at the moment.')
       }
     }
 
@@ -124,7 +139,7 @@ function App() {
           </form>
         </Container>
       </header>
-      {error && <ErrorMessage />}
+      {error && <ErrorMessage message={error} />}
       <Results loading={loading} images={results} />
       {showBttButton && <BackToTop />}
     </main>
