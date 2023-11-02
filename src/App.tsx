@@ -81,6 +81,10 @@ function App() {
   }, [error])
 
   useEffect(() => {
+    setSelectedSubBreed('')
+  }, [selectedBreed])
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollPosition: number = window.scrollY
 
