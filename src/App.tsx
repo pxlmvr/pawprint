@@ -43,7 +43,7 @@ function App() {
       }
     } catch (error) {
       console.error(error)
-      setError('Somwthing went wrong. Please try again')
+      setError('Something went wrong. Please try again.')
     }
     setLoading(false)
   }
@@ -63,7 +63,7 @@ function App() {
       }
     } catch (error) {
       console.error(error)
-      setError('Somwthing went wrong. Please try again')
+      setError('Something went wrong. Please try again.')
     }
     setLoading(false)
   }
@@ -139,7 +139,7 @@ function App() {
                 disabled={!selectedBreed}
                 className="mt-l"
                 onClick={getRandom}
-                testId='fetch-random-button'
+                testId="fetch-random-button"
               >
                 <Shuffle />
                 Fetch random image
@@ -148,7 +148,7 @@ function App() {
                 disabled={!selectedBreed}
                 className="mt-s"
                 onClick={getList}
-                testId='fetch-list-button'
+                testId="fetch-list-button"
               >
                 <List />
                 Get all images!
