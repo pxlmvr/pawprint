@@ -34,7 +34,7 @@ npm install
 To run the app in development mode:
 
 ```bash
-   npm run dev
+npm run dev
 ```
 
 ### Production Build
@@ -42,7 +42,7 @@ To run the app in development mode:
 To create a production build of the app:
 
 ```bash
-   npm run build
+npm run build
 ```
 
 This will generate an optimized build in the `build` directory.
@@ -62,11 +62,13 @@ npm run test
 We use Cypress for End to end testing. To run e2e tests in headless mode:
 
 ```bash
+npm run dev
 npm run e2e:headless
 ```
 
 Alternatively if you want to run tests through Cypress' UI run:
 
 ```bash
+npm run dev
 npm run e2e
 ```

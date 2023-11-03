@@ -1,10 +1,38 @@
+import { breedList } from '../fixtures/breedList'
+import { randobMyBreedAndSubBreed, randomByBreed } from '../fixtures/random'
+
 describe('get a random image', () => {
   beforeEach(() => {
     cy.visit('localhost:5173')
+
+    cy.intercept(
+      {
+        method: 'GET',
+        url: '**/api/breeds/list/all',
+      },
+      breedList
+    ).as('fetchBreeds')
+
+    cy.intercept(
+      {
+        method: 'GET',
+        url: '**/api/breed/*/images/random',
+      },
+      randomByBreed
+    ).as('fetchRandomByBreed')
+
+    cy.intercept(
+      {
+        method: 'GET',
+        url: '**/api/breed/*/*/images/random',
+      },
+      randobMyBreedAndSubBreed
+    ).as('fetchRandomByBreedAndSubBreed')
   })
 
   it('gets a random image by breed', () => {
     cy.get('select[name="breed"]').select('Corgi')
+
     cy.findByTestId('fetch-random-button').click()
 
     cy.get('figure').should('not.be.null')
