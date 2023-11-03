@@ -118,6 +118,7 @@ function App() {
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                 setSelectedBreed(e.target.value)
               }
+              testId="breed-select"
             />
             {subBreedList.length > 0 && (
               <Select
@@ -132,6 +133,7 @@ function App() {
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setSelectedSubBreed(e.target.value)
                 }
+                testId="subbreed-select"
               />
             )}
             <div id="submit-buttons">
