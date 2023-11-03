@@ -158,7 +158,7 @@ function App() {
         </Container>
       </section>
       {error && <ErrorMessage message={error} />}
-      <Results loading={loading} images={results} />
+      <Results breed={selectedBreed} loading={loading} images={results} />
       {showBttButton && <BackToTop />}
     </main>
   )

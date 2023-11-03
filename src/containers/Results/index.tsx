@@ -7,9 +7,10 @@ import { Spinner } from '@/components/Spinner'
 type Props = {
   images: string[]
   loading: boolean
+  breed: string
 }
 
-export const Results: React.FC<Props> = ({ images, loading }) => {
+export const Results: React.FC<Props> = ({ images, loading, breed }) => {
   const multiple: boolean = images.length > 1
 
   return (
@@ -24,7 +25,7 @@ export const Results: React.FC<Props> = ({ images, loading }) => {
             }
           >
             {images.map((img: string) => {
-              return <Image key={img} url={img} />
+              return <Image breed={breed} key={img} url={img} />
             })}
           </div>
         )}
