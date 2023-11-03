@@ -13,7 +13,9 @@ import { List } from './icons/List'
 export type BreedData = Record<string, string[]>
 
 const anyOption: SelectOption = { label: 'Any', value: '' }
-const scrollTreshold = 300
+const scrollTreshold = 380
+
+const genericError = 'Something went wrong. Please try again.'
 
 function App() {
   const [breeds, setBreeds] = useState<BreedData>({})
@@ -43,7 +45,7 @@ function App() {
       }
     } catch (error) {
       console.error(error)
-      setError('Something went wrong. Please try again.')
+      setError(genericError)
     }
     setLoading(false)
   }
@@ -63,7 +65,7 @@ function App() {
       }
     } catch (error) {
       console.error(error)
-      setError('Something went wrong. Please try again.')
+      setError(genericError)
     }
     setLoading(false)
   }
@@ -118,7 +120,6 @@ function App() {
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                 setSelectedBreed(e.target.value)
               }
-              testId="breed-select"
             />
             {subBreedList.length > 0 && (
               <Select
@@ -133,7 +134,6 @@ function App() {
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setSelectedSubBreed(e.target.value)
                 }
-                testId="subbreed-select"
               />
             )}
             <div id="submit-buttons">
