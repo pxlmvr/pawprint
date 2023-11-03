@@ -112,7 +112,7 @@ function App() {
           <form>
             <Select
               options={breedList.map((breed) => mapToLabelValue(breed))}
-              label="Breed"
+              label="Select a breed"
               name="breed"
               placeholder="Select a breed"
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -122,7 +122,7 @@ function App() {
             {subBreedList.length > 0 && (
               <Select
                 className="mt-s"
-                label="Sub breed"
+                label="Select a sub breed"
                 name="subBreed"
                 placeholder="Select a sub breed"
                 options={[

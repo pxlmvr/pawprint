@@ -1,6 +1,8 @@
 # PawPrint
 
-Fetch wonderful pictures of cute doggos 🐶🐶🐶
+Fetch wonderful pictures of cute doggos 🐶🐶🐶.
+
+This project is built using [Vite](https://vitejs.dev/) and uses [React](https://react.dev/) and [Typescript](https://www.typescriptlang.org/).
 
 ## Table of Contents
 
