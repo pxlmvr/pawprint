@@ -20,6 +20,9 @@ export const Results: React.FC<Props> = ({ images, loading, breed }) => {
           <Spinner />
         ) : (
           <div
+            aria-live="polite"
+            aria-busy={loading}
+            aria-relevant="all"
             className={
               multiple ? `${classes.multiple} ${classes.grid}` : classes.grid
             }
