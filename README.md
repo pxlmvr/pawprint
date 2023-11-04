@@ -13,6 +13,7 @@ This project is built using [Vite](https://vitejs.dev/) and uses [React](https:/
 - [Testing](#testing)
   - [Unit](#unit)
   - [End to End](#end-to-end)
+- [Known issues](#known-issues)
 
 ## Installation
 
@@ -76,3 +77,13 @@ Alternatively if you want to run tests through Cypress' UI run:
 npm run dev
 npm run e2e
 ```
+
+## Known issues
+
+If you are running node v.20.6.0 you could run into the following error while running the app in development mode:
+
+```bash
+[plugin:vite:react-babel] Cannot redefine property: File
+```
+
+It's recommended to use the latest lts version of node to get rid of the issue.
