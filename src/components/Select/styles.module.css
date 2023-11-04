@@ -5,6 +5,6 @@
   border: 1px solid var(--nickel);
   padding: 0 1rem;
   -webkit-appearance: none;
-  background: #fff url('src/assets/chevron.svg') no-repeat;
+  background: #fff url('$assets/chevron.svg') no-repeat;
   background-position: calc(100% - 20px);
 }
