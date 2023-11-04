@@ -1,5 +1,10 @@
 import classes from './styles.module.css'
 
 export const Spinner: React.FC = () => {
-  return <div className={`${classes.spinner} animate-spin`}></div>
+  return (
+    <div
+      data-testid="spinner"
+      className={`${classes.spinner} animate-spin`}
+    ></div>
+  )
 }

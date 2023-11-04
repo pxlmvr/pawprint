@@ -1,16 +1,16 @@
 import classes from './styles.module.css'
 
-import { Container } from '@/components/Container'
-import { Image } from '@/components/Image'
-import { Spinner } from '@/components/Spinner'
+import { Container } from '@components/Container'
+import { Image } from '@components/Image'
+import { Spinner } from '@components/Spinner'
 
 type Props = {
+  breed: string
   images: string[]
   loading: boolean
-  breed: string
 }
 
-export const Results: React.FC<Props> = ({ images, loading, breed }) => {
+export const Results: React.FC<Props> = ({ breed, images, loading }) => {
   const multiple: boolean = images.length > 1
 
   return (
@@ -20,6 +20,7 @@ export const Results: React.FC<Props> = ({ images, loading, breed }) => {
           <Spinner />
         ) : (
           <div
+            data-testid="results"
             aria-live="polite"
             aria-busy={loading}
             aria-relevant="all"

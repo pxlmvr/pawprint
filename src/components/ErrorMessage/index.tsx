@@ -5,7 +5,7 @@ type Props = {
 }
 
 export const ErrorMessage: React.FC<Props> = ({ message }) => (
-  <div className={classes.wrapper}>
+  <div role="alert" className={classes.wrapper}>
     <p className={classes.errorMessage}>{message}</p>
   </div>
 )

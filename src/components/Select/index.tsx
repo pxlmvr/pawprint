@@ -4,21 +4,21 @@ import classes from './styles.module.css'
 export type SelectOption = { value: string; label: string }
 
 type Props = {
+  className?: string
   label: string
   name: string
-  options: SelectOption[]
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+  options: SelectOption[]
   placeholder?: string
-  className?: string
 }
 
 export const Select: React.FC<Props> = ({
+  className,
   label,
   name,
-  options,
   onChange,
+  options,
   placeholder = 'Select...',
-  className,
 }) => {
   const id = `select_${name}`
 

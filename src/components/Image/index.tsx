@@ -1,11 +1,11 @@
 import classes from './styles.module.css'
 
 type Props = {
-  url: string
   breed: string
+  url: string
 }
 
-export const Image: React.FC<Props> = ({ url, breed }) => {
+export const Image: React.FC<Props> = ({ breed, url }) => {
   return (
     <figure>
       <img

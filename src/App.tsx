@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react'
-import { fetchBreedList, fetchList, fetchRandom } from './clients/dogceo'
-import { ErrorMessage } from '@components/ErrorMessage'
-import { Results } from '@containers/Results'
-import { Container } from '@components/Container'
-import { Select, SelectOption } from '@components/Select'
-import { mapToLabelValue } from '@utils/mapToLabelValue'
-import { Button } from '@components/Button'
 import { BackToTop } from './components/BackToTop'
-import { Shuffle } from './icons/Shuffle'
+import { Button } from '@components/Button'
+import { Container } from '@components/Container'
+import { ErrorMessage } from '@components/ErrorMessage'
+import { fetchBreedList, fetchList, fetchRandom } from './clients/dogceo'
 import { List } from './icons/List'
+import { mapToLabelValue } from '@utils/mapToLabelValue'
+import { Results } from '@containers/Results'
+import { Select, SelectOption } from '@components/Select'
+import { Shuffle } from './icons/Shuffle'
+import { useEffect, useState } from 'react'
 
 export type BreedData = Record<string, string[]>
 
 const anyOption: SelectOption = { label: 'Any', value: '' }
 const scrollTreshold = 380
 
-const genericError = 'Something went wrong. Please try again.'
-
 function App() {
+  const genericError = 'Something went wrong. Please try again.'
+
   const [breeds, setBreeds] = useState<BreedData>({})
   const [showBttButton, setShowBttButton] = useState<boolean>(false)
 
