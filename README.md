@@ -3,6 +3,7 @@
 Fetch wonderful pictures of cute doggos 🐶🐶🐶.
 
 This project is built using [Vite](https://vitejs.dev/) and uses [React](https://react.dev/) and [Typescript](https://www.typescriptlang.org/).
+You can see it live on [https://paw-print.netlify.app/](https://paw-print.netlify.app/).
 
 ## Table of Contents
 
