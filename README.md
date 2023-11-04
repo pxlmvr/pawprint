@@ -20,13 +20,13 @@ This project is built using [Vite](https://vitejs.dev/) and uses [React](https:/
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:pxlmvr/deliveristo-technical-assessment.git
+git clone git@github.com:pxlmvr/pawprint.git
 ```
 
 2. Install dependencies:
 
 ```bash
-cd deliveristo-technical-assessment
+cd pawprint
 npm install
 ```
 
