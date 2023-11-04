@@ -71,6 +71,8 @@ npm run dev
 npm run e2e:headless
 ```
 
+Note: this command assumes you have Chrome installed on your machine.
+
 Alternatively if you want to run tests through Cypress' UI run:
 
 ```bash
