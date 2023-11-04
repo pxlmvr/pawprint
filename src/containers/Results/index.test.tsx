@@ -13,7 +13,7 @@ describe('<Results />', () => {
     const { queryByTestId } = render(
       <Results
         breed="someBreed"
-        images={['example', 'example']}
+        images={['example1', 'example2']}
         loading={false}
       />
     )

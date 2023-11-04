@@ -39,6 +39,8 @@ To run the app in development mode:
 npm run dev
 ```
 
+By default views are on [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
+
 ### Production Build
 
 To create a production build of the app:
@@ -47,7 +49,7 @@ To create a production build of the app:
 npm run build
 ```
 
-This will generate an optimized build in the `build` directory.
+This will generate an optimized build in the `dist` directory.
 
 ## Testing
 
